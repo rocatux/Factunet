@@ -1,0 +1,61 @@
+<aside id="left-panel" class="left-panel">
+    <nav class="navbar navbar-expand-sm navbar-default">
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="{% url 'dashboard' %}"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                </li>
+                <li class="menu-title"><strong>Q Factunet</strong></li><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-paper-plane"></i>Proveedor</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a href="{% url 'create-supplier' %}">Agregar</a></li>
+                        <li><i class="fa fa-th"></i><a href="{% url 'supplier-list' %}">Ver lista</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Cliente Comprador</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a href="{% url 'create-buyer' %}">Agregar</a></li>
+                        <li><i class="fa fa-th"></i><a href="{% url 'buyer-list' %}">Ver lista</a></li>
+                        <li><i class="fa fa-id-card-o"></i><a href="{% url 'create-addresses' %}">Agregar Direcciones</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-product-hunt"></i>Productos</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a href="{% url 'create-product' %}">Agregar</a></li>
+                        <li><i class="fa fa-th"></i><a href="{% url 'product-list' %}">Ver lista</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cart-plus"></i>Pedido</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a href="{% url 'create-order' %}">Agregar</a></li>
+                        <li><i class="fa fa-th"></i><a href="{% url 'order-list' %}">Ver lista</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-truck"></i>Entrega</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a href="{% url 'create-delivery' %}">Agregar</a></li>
+                        <li><i class="fa fa-th"></i><a href="{% url 'delivery-list' %}">Ver Lista</a></li>
+                    </ul>
+                </li>
+
+                <!--usuario admin-->
+                <!--<li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop"></i>Usuarios</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-id-card-o"></i><a href="{% url 'create-user' %}">Agregar</a></li>
+                        <li><i class="fa fa-th"></i><a href="{% url 'delivery-list' %}">Ver Lista</a></li>
+                    </ul>
+                </li>-->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</aside>

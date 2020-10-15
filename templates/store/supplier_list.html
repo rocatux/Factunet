@@ -1,0 +1,98 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Supplier List{% endblock title %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Proveedor Fabrica</a></li>
+                            <li class="active">Lista</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock breadcrumbs %}
+
+{% block content %}
+<div class="row">
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="box-title">Proveedor Fabrica</h4>
+            </div>
+            <div class="card-body--">
+                <div class="table-stats order-table ov-h">
+                    <table class="table ">
+                        <thead>
+                            <tr>
+                                <th class="serial">#</th>
+                                <th>Nombre </th>
+                                <th>Direccion</th>
+                                <th>Telefono</th>
+                                <th>Tipo</th>
+                                <th>Fecha</th>
+                                <th>Opciones de Lista</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if supplier %}
+                            {% for supplier in supplier %}
+                            <tr>
+                                <td class="serial">{{ forloop.counter }}</td>
+                                <td>{{ supplier.name }}</td>
+                                <td>{{ supplier.address }}</td>
+                                <td>{{ supplier.phoneSupplier }}</td>
+                                <td>{{ supplier.tipe }}</td>
+                                <td>{{ supplier.created_date }}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn btn-secondary btn-sm" href="{% url 'delete-supplier' supplier.id  %}">Eliminar<i ></i></a>
+
+                                         <a class="btn btn-primary btn-sm" href="{% url 'edit-supplier' supplier.id  %}">Editar<i ></i></a>
+                                     
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            {% else %}
+                                <tr><td>No hay datos de proveedor fabrica</td></tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div> <!-- /.table-stats -->
+            </div>
+        </div> <!-- /.card -->
+        
+    </div>  <!-- /.col-lg-8 -->
+
+    
+</div>
+
+    <center>
+                    <ul class="pager">
+                        <li>
+                            {% if page_obj.has_previous  %}
+                            <a class="btn btn-primary btn-sm" href="?page={{ page_obj.previous_page_number }}">Previo</a>{% endif%}
+                        </li>
+                        <li>
+                            {% if page_obj.has_next  %}
+                            <a class="btn btn-primary btn-sm"  href="?page={{ page_obj.next_page_number }}">Siguiente</a>{% endif %}
+                        </li>
+                    </center>
+{% endblock content %}

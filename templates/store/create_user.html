@@ -1,0 +1,89 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Create User{% endblock title %}
+
+{% block breadcrumbs %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Usuario</a></li>
+                            <li class="active">Crear</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock breadcrumbs %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <strong class="card-title">Crear Usuario</strong>
+            </div>
+            <div class="card-body">
+               
+                <div id="pay-invoice">
+                    <div class="card-body">
+                        <form action="#" method="post" class="form-horizontal">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name" class="control-label mb-1">Nombre de Usuario</label>
+                                {{ form.username }}
+                            </div>
+                             <div class="form-group">
+                                <label for="surname" class="control-label mb-1">Nombres</label>
+                                 {{ form.first_name }}
+                            </div>
+
+                             <div class="form-group">
+                                <label for="phone" class="control-label mb-1">Apellidos</label>
+                          
+                                {{ form.last_name }}
+                            </div>
+
+                             <div class="form-group">
+                                <label for="dpi" class="control-label mb-1">Email</label>
+                                {{ form.email }}
+                            </div>
+
+                            
+                             <div class="form-group">
+                                <label for="balances" class="control-label mb-1">Ingrese contraseña</label>
+                                {{ form.password1 }}
+                            </div>
+
+                             <div class="form-group">
+                                <label for="credit" class="control-label mb-1">Repita contraseña</label>
+                               {{ form.password2 }}
+                            </div>
+                           
+                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                    <span id="payment-button-amount">Registrar Usuario</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div> <!-- .card -->
+
+    </div><!--/.col-->
+</div>
+{% endblock content %}

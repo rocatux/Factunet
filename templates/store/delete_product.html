@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+
+{% block title %}Product Delete{% endblock title %}
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <div class="breadcrumbs-inner">
+        <div class="row m-0">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Eliminar</a></li>
+                            <li class="active">Producto</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock breadcrumbs %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+ <form  method="post" class="form-horizontal" >
+    {% csrf_token %}
+    <div class="alert alert-danger" role="alert">
+        <strong>¡Eliminar!</strong> Esta seguro de querer eliminar el siguiente registro de producto: {{ product.name }} {{ buyer.description }} <br><br>
+   </div>
+   <button  class="btn btn-danger" type="submit">Si</button>
+     <a class="btn btn-success" href="{% url 'product-list' %}" >Cancelar</a>  
+ </form>
+
+</body>
+</html>
+
+{% endblock content %}
